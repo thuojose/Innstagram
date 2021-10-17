@@ -14,9 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include,reverse_lazy
+from django.contrib.auth import views
+from django_registration.backends.one_step.views import RegistrationView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/',include('django_registration.backends.one_step.urls'))
+    path('',include('instagram.urls')),
+    path('accounts/register/',RegistrationView.as_view(success_url='/accounts/login/')),
+    path('accounts/',include('django_registration.backends.one_step.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('logout/',views.LogoutView.as_view(),{'next_page':'/'}),
 ]
