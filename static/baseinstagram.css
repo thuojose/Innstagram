@@ -1,0 +1,41 @@
+body {
+    font-family: 'Courgette', cursive;
+    font-size: 3vh;
+}
+
+.navHomeLink {
+    font-family: 'Cookie', cursive;
+    font-size: 7vh;
+}
+
+.navbar {
+    font-family: 'Lobster', cursive;
+}
+
+.top-buffer {
+    margin-top: 5%;
+}
+
+form {
+    font-family: 'Lobster', cursive;
+}
+
+.logo {
+    font-family: 'Lobster', cursive;
+    font-size: 7vh;
+    font-weight: normal;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+}
+
+.smallFont {
+    font-family: 'Lobster', cursive;
+    font-size: 2.3vh;
+    color: blue;
+}
+
+.blueUnderline {
+    font-size: 3vh;
+    color: blue;
+    text-decoration: underline;
+}
