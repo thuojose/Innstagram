@@ -11,6 +11,8 @@ urlpatterns = [
     path('profile/',views.profilePage,name='instagramProfile'),
     path('like/<int:image_id>',views.likes,name='likes'),
     path('comment/<int:image_id>',views.comments,name='comments'),
+      path('upload/',views.uploadPic,name='instagramFeed'),
+    path('update-profile/',views.updateProfile,name='editProfile'),
     
      ]
 if settings.DEBUG:
