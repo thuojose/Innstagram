@@ -97,3 +97,19 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'instagram_pages/search.html',locals())
 
+
+#profile page
+@login_required(login_url='/accounts/login')
+def profilePage(request):
+    likesForm = LikesForm
+    commentForm = CommentsForm
+    images = Image.objects.all()
+    user = request.user.get_username()
+    current_user = request.user
+    photos = Image.objects.filter(profile=current_user.id)
+    profile = Profile.objects.all()
+    likes = Like.objects.all()
+ 
+    
+    return render(request,'instagram_pages/profile.html', locals())
+
