@@ -21,6 +21,4 @@ class UpdateProfileForm(forms.ModelForm):
 class UploadPicForm(forms.ModelForm):
     class Meta:
         model = Image
-        # imagefile = Image.image=('Select a file')
-        fields=('image','name','caption',)
-        # exclude = ['profile','post_date','user']
+        fields = '__all__'

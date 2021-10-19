@@ -11,7 +11,7 @@ from django.dispatch import receiver
 class Profile(models.Model):
     prof_pic = ImageField(blank=True, manual_crop="")
     bio = models.CharField(max_length = 200)
-    user = models.OneToOneField('auth.User',on_delete=models.CASCADE, default=None)
+    user = models.OneToOneField(User,on_delete=models.CASCADE, default=None)
     
     def save_profile(self):
         self.save()
@@ -46,8 +46,8 @@ class Image(models.Model):
     name = models.CharField(max_length =70)
     caption = models.CharField(max_length =700)
     post_date = models.DateTimeField(auto_now_add=True)
-    profile = models.ForeignKey(User, on_delete=models.CASCADE)
-    user = models.ForeignKey(Profile, on_delete=models.CASCADE, default=None)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
     
     def save_image(self):
