@@ -22,3 +22,4 @@ class UploadPicForm(forms.ModelForm):
     class Meta:
         model = Image
         fields = '__all__'
+        exclude = ('user','profile')

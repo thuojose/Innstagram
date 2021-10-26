@@ -6,6 +6,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from .models import *
 from django.contrib.auth.models import User
+from .models import Image
 
 
 #landing page
@@ -138,6 +139,7 @@ def updateProfile(request):
 @login_required(login_url='/accounts/login')
 def uploadPic(request):
     current_user = request.user
+    pic = Image(user = request.user,profile = request.user.profile)
     # my_prof = Profile.objects.get(id=current_user.id)
     # uploadForm = UploadPicForm()
     # print(uploadForm)
@@ -145,7 +147,7 @@ def uploadPic(request):
  
 
     if request.method == 'POST':
-        uploadForm = UploadPicForm(request.POST,request.FILES)
+        uploadForm = UploadPicForm(request.POST,request.FILES,instance=pic)
         # profile = request.user.username
         # uploadForm = UploadPicForm(request.POST or None,request.FILES or None)
         user = request.user.id
@@ -158,6 +160,6 @@ def uploadPic(request):
         return redirect('instagramProfile')
     else:
         # uploadForm = UploadPicForm(request.POST or None,request.FILES or None)
-        uploadForm = UploadPicForm()
+        uploadForm = UploadPicForm(instance=pic)
 
         return render(request,'instagram_pages/upload_pic.html', locals())
