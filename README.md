@@ -1,13 +1,13 @@
-#Name of the project
+# Name of the project
 Instagram
 
-#Description of the project
+# Description of the project
 A instagram application that allows user to post pictures and they get likes and comments on them
 
-Author of the project
+# Author of the project
 thuojose
 
-Features
+# Features
 As a user of the web application you will be able to:
 
 Sign in to the application to start using.
@@ -19,21 +19,20 @@ See my profile with all my pictures.
 Leave a comment on a picture.
 
 
-Prerequisites
+# Prerequisites
 python3.8
 
 virtual environment
 
 pip
 
-Cloning
-
+# Cloning
 In your terminal:
 $ git clone https://github.com/thuojose/Instagram.git
 
 $ cd instagram
 
-Running the Application
+# Running the Application
 Install virtual environment using $ python3.8 -m venv --without-pip virtual
 
 Activate virtual environment using $ source virtual/bin/activate
@@ -48,7 +47,7 @@ python3.8 manage.py runserver
 
 Test the Application
 
-Technologies Used
+# Technologies Used
 Python3.8
 
 Django
@@ -59,10 +58,10 @@ Bootstrap
 
 This application is developed using Python3.8, Django, HTML and Bootstrap
 
-Support or Contribution
+# Support or Contribution
 Email me! @josephmbugus!6@gmail.com
 
-License
+# License
 MIT License
 
 Copyright (c) 2021 thuojose
